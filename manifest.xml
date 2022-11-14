@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/Framework/App/Manifest/Schema/manifest-1.0.xsd">
+
+    <meta>
+        <name>Shopware6AlertApp</name>
+        <label>Alert App</label>
+        <label lang="de-DE">Name</label>
+        <description>This Is A Shopware 6 Test App</description>
+        <description lang="de-DE">Eine Beschreibung</description>
+        <author>Your Company Ltd.</author>
+        <copyright>(c) by Alpha Ceema Ltd.</copyright>
+        <version>1.0.0</version>
+        <icon>Resources/config/plugin.png</icon>
+        <license>MIT</license>
+    </meta>
+
+    <setup>
+        <registrationUrl>http://alphaceema.com.ng/shopware6/trackapp/register.php</registrationUrl> 
+        <secret>kanSecretHowD3849md5Shah</secret>
+    </setup>
+
+    <permissions>
+        <read>customer</read>
+        <read>product</read>
+        <create>product</create>
+        <update>product</update>
+        <delete>order</delete>
+    </permissions>
+
+    <webhooks>
+
+        <webhook 
+            name="checkout_customer_login" 
+            url="http://alphaceema.com.ng/shopware6/trackapp/events/product_loaded.php" 
+            event="checkout.customer.login"
+        />
+
+        <webhook 
+            name="product_changed" 
+            url="http://alphaceema.com.ng/shopware6/trackapp/events/product_loaded.php" 
+            event="product.written"
+        />
+
+        <webhook 
+            name="product_review.written" 
+            url="http://alphaceema.com.ng/shopware6/trackapp/events/product_loaded.php" 
+            event="product_review.written"
+        />
+
+
+    </webhooks>
+
+
+</manifest>
